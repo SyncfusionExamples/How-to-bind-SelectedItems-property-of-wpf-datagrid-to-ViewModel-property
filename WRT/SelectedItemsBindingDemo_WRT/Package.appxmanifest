@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" >
+  <Identity Name="3016d8b0-4e3e-40f0-ae2e-be20ebe752e2" Publisher="CN=Maheparveen" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>App1</DisplayName>
+    <PublisherDisplayName>Maheparveen</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="SelectedItemsBindingDemo.App">
+      <VisualElements DisplayName="SelectedItemsBindingDemo" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="SelectedItemsBindingDemo" ForegroundText="light" BackgroundColor="#464646">
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

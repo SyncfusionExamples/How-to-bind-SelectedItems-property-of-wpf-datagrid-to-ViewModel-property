@@ -1,0 +1,56 @@
+﻿<Page x:Class="SfDataGridDemo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:SfDataGridDemo"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+      mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:PersonModel />
+    </Page.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <syncfusion:SfDataGrid x:Name="dataGrid"
+                               Grid.Row="0"
+                               AllowEditing="True"
+                               AllowResizingColumns="True"
+                               AllowResizingHiddenColumns="True"
+                               AutoGenerateColumns="False"
+                               HideEmptyGridViewDefinition="True"
+                               ItemsSource="{Binding GDCSource}"
+                               NavigationMode="Cell"
+                               SelectionMode="Extended"
+                               ShowGroupDropArea="True"
+                               ShowRowHeader="True"
+                               local:SfDataGridHelper.SelectedItems="{Binding SelectedItems,
+                                                                              Mode=TwoWay}">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="FirstName" />
+                <syncfusion:GridTextColumn MappingName="LastName" TextAlignment="Right" />
+                <syncfusion:GridTextColumn HeaderText="Age"
+                                           MappingName="Age"
+                                           TextAlignment="Right" />
+                <syncfusion:GridTextColumn MappingName="Salary" TextAlignment="Right" />
+                <syncfusion:GridTextColumn MappingName="GrandTotal" />
+                <syncfusion:GridTextColumn MappingName="PF" TextAlignment="Right" />
+                <syncfusion:GridTextColumn HeaderText="ESI"
+                                           MappingName="ESI"
+                                           TextAlignment="Right" />
+                <syncfusion:GridTextColumn MappingName="Incometax" TextAlignment="Right" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+        <TextBlock Grid.Row="1"
+                   Margin="0,5,5,5"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   Text="{Binding Summary}" />
+
+    </Grid>
+</Page>
